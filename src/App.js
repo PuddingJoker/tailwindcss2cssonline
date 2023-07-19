@@ -65,7 +65,7 @@ function App() {
 
   return (
     <div>
-      <div className='flex jc tit my-20'>Batch convert in projects: <a href='https://github.com/PuddingJoker/tailwindcss2css' className='ml-10' target='_blank'>click me</a></div>
+      <div className='flex jc tit my-20'>Format content via prettier and batch convert in projects: <a href='https://github.com/PuddingJoker/tailwindcss2css' className='ml-10' target='_blank'>click me</a></div>
       <div className='flex jc pt-10'>
         <span>Framework selection:</span>
         <select className='ml-10' onChange={chooseFramework}>
