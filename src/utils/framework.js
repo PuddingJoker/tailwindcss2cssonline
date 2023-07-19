@@ -52,7 +52,7 @@ const JsxConvert = (content = "", way) => {
       const codeToInsert = `
                 import styles from "./index.module.css";
             `;
-      content = content.replace(importReg, `$1${codeToInsert}`);
+      content = importReg.test(content) ? content.replace(importReg, `$1${codeToInsert}`) : codeToInsert + content;
       return {
         css, content
       }
@@ -63,7 +63,7 @@ const JsxConvert = (content = "", way) => {
                 import { css } from "@linaria/core";
                 ${css}
             `;
-      content = content.replace(importReg, `$1${codeToInsert}`);
+      content = importReg.test(content) ? content.replace(importReg, `$1${codeToInsert}`) : codeToInsert + content;
       return content
     }
   } catch (error) {
