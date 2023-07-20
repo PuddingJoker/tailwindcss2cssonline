@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tailwindcss2cssonline/static/css/main.631677c5.css",
-    "main.js": "/tailwindcss2cssonline/static/js/main.a36b2a05.js",
+    "main.js": "/tailwindcss2cssonline/static/js/main.8d640405.js",
     "index.html": "/tailwindcss2cssonline/index.html",
     "main.631677c5.css.map": "/tailwindcss2cssonline/static/css/main.631677c5.css.map",
-    "main.a36b2a05.js.map": "/tailwindcss2cssonline/static/js/main.a36b2a05.js.map"
+    "main.8d640405.js.map": "/tailwindcss2cssonline/static/js/main.8d640405.js.map"
   },
   "entrypoints": [
     "static/css/main.631677c5.css",
-    "static/js/main.a36b2a05.js"
+    "static/js/main.8d640405.js"
   ]
 }
