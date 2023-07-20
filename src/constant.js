@@ -81,7 +81,7 @@ function handleReset() {
 
 
 
-const jsx = `import Background from "./commonComponents/Background";
+const react = `import Background from "./commonComponents/Background";
 import logo from "./assets/images/zkt/zkt.png"
 
 
@@ -110,5 +110,5 @@ export default Header
 
 
 export {
-    jsx, vue, classnames
+  react, vue, classnames
 }

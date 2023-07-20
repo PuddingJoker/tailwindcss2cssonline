@@ -180,13 +180,13 @@ const VueConvert = (content = "", way) => {
 /**
  *
  * @param {*} content   content
- * @param {*} VueOrJsx  project framework:  "vue"  "jsx"
+ * @param {*} VueOrJsx  project framework:  "vue"  "react"
  * @param {*} way  compile way: "inline"  "native"  "cssinjs"
  */
 
-const run = (content, VueOrJsx = "jsx", way = "inline") => {
+const run = (content, VueOrJsx = "react", way = "inline") => {
   try {
-    if (VueOrJsx === "jsx") return JsxConvert(content, way);
+    if (VueOrJsx === "react") return JsxConvert(content, way);
     if (VueOrJsx === "vue") return VueConvert(content, way);
   } catch (error) {
     console.log(error);

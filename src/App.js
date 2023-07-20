@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { tailwindToCss, originClasses } from "./utils"
 import run from "./utils/framework"
-import { vue, jsx, classnames } from "./constant"
+import { vue, react, classnames } from "./constant"
 
 
 
@@ -42,7 +42,7 @@ function App() {
       setInputValue(vue)
       setCompileWay(compileWay == 'cssinjs' ? 'inline' : compileWay)
     } else {
-      setInputValue(jsx)
+      setInputValue(react)
     }
 
     setFramework(fw)
@@ -61,7 +61,7 @@ function App() {
       <div className='flex jc pt-10'>
         <span>Framework selection:</span>
         <select className='ml-10' onChange={chooseFramework} defaultValue='classnames'>
-          <option value="jsx">jsx</option>
+          <option value="react">react</option>
           <option value="vue">vue</option>
           <option value="classnames">classnames</option>
         </select>
@@ -72,7 +72,7 @@ function App() {
             <select className='ml-10' onChange={e => setCompileWay(e.target.value)}>
               <option value="inline">inline</option>
               <option value="native">native</option>
-              {framework == "jsx" && <option value="cssinjs">cssinjs(linaria)</option>}
+              {framework == "react" && <option value="cssinjs">cssinjs(linaria)</option>}
             </select>
           </div>
         }
@@ -88,7 +88,7 @@ function App() {
           <textarea className='p-10' value={inputValue} onChange={e => setInputValue(e.target.value)}></textarea>
         </div>
 
-        {(compileWay == "native" && framework == "jsx") &&
+        {(compileWay == "native" && framework == "react") &&
           <div className='ml-30'>
             <div className='mb-10 tit'>native css content </div>
             <textarea className='p-10' value={cssValue} onChange={() => { }}></textarea>
