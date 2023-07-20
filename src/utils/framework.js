@@ -2,6 +2,26 @@ import { tailwindToCss, originClasses } from "./index";
 
 const importReg = /(import[^]*?\r?\n[\r\n]+)(?!import\b)/;
 
+function updateCSSProperty(str) {
+  const properties = str.split(';');
+
+  for (let i = 0; i < properties.length; i++) {
+    let property = properties[i].trim();
+    const [key, value] = property.split(':').map(item => item.trim());
+
+    if (key) {
+      const updatedKey = key
+        .split('-')
+        .map((part, index) => (index > 0 ? part.charAt(0).toUpperCase() + part.slice(1) : part))
+        .join('');
+
+      properties[i] = `${updatedKey}: ${value}`
+    }
+  }
+
+  return properties.join('; ');
+}
+
 const JsxConvert = (content = "", way) => {
   let css = "";
   let count = 1;
@@ -30,9 +50,7 @@ const JsxConvert = (content = "", way) => {
       }
 
       if (way === "inline") {
-        let style = tailwindToCss(b).replace(/-([a-z])/g, (a, p1) => {
-          return p1.toUpperCase();
-        });
+        let style = updateCSSProperty(tailwindToCss(b))
 
         style = `style={{${style}}}`
           .replace(/(\w+):\s*([^;]+)/g, '$1: "$2"')
